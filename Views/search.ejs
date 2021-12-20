@@ -1,6 +1,12 @@
-<h1>Searh for a Movie</h1>
 
-<form action="/result" method="get">
+<%- include('partials/header') %>
+
+<h1>MovieSearcher</h1>
+<div class="formed">
+<form  action="/result" method="get">
     <input type="text"  name='search'  placeholder="Type a Movie name">
     <input type="submit" >
 </form>
+</div>
+
+<%- include('partials/footer') %>

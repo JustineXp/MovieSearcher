@@ -3,6 +3,7 @@ const app = express();
 const request = require("request");
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 app.get("/search", (req, res) => {
   res.render("search");
@@ -16,8 +17,7 @@ app.get("/result", (req, res) => {
     if (!error && response.statusCode == 200) {
       let data = JSON.parse(body);
       console.log(data);
-      console.log(data["search"]);
-      res.render("result", { data: data });
+      res.render("result", { data: data, query: query });
     } else {
       console.log(error);
     }
