@@ -1,19 +1,25 @@
 <%- include('partials/header') %>
 
-<h1>Results for <%= query %> </h1>
+<h1>Results for <%= query %></h1>
 <div class="container">
-<div class="row">
-<% data.Search.forEach(function(movie){ %>
-         <div class="col-md">
-            <div class="img-thumbnail">
-               <img class="poster" src="<%= movie.Poster %>" alt="<%= movie.Title %>">
-               <p><strong><%= movie.Title %></strong></p>
-                  <p><%= movie.Year %></p>
-            </div>
-         </div>
-         
-         <% }) %>
+  <div class="row">
+    <% data.Search.forEach(function(movie){ %>
+    <div class="col-md">
+      <div class="img-thumbnail">
+        <img
+          class="poster"
+          src="<%= movie.Poster %>"
+          alt="<%= movie.Title %>"
+        />
+        <a href="/result/<%= movie.imdbID %>">
+          <p><strong><%= movie.Title %></strong></p>
+        </a>
+        <p><%= movie.Year %></p>
       </div>
-   </div>
-   
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+
 <%- include('partials/footer') %>
