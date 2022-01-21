@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const request = require("request");
+const ejsMate = require("ejs-mate");
 
 app.set("view engine", "ejs");
+app.engine("ejs", ejsMate);
 app.use(express.static("public"));
 
-app.get("/search", (req, res) => {
+app.get("/", (req, res) => {
   res.render("search");
 });
 

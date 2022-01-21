@@ -1,21 +1,27 @@
-<%- include('partials/header') %>
+<%- layout('layout/boilerplate') %>
 
-<div class="container x1">
-  <div class="row">
-    <div class="col-4">
-      <img
-        class="viewposter"
-        src="<%= data.Poster %>"
-        alt="<%= data.Title %>"
-      />
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card" style="width: 100%">
+        <img
+          src="<%= data.Poster %>"
+          class="card-img-top"
+          alt="<%= data.Title %>"
+        />
+      </div>
     </div>
-    <div class="col-8">
-      <h1><%= data.Title %></h1>
-      <p>Year:<%= data.Year %></p>
-      <p>Genre:<%= data.Genre %></p>
-      <p>Plot:<%= data.Plot %></p>
-      <p>Rating:<%= data.imdbRating %></p>
+    <div class="col-md-8">
+      <div>
+        <div class="card-body">
+          <h5 class="card-title display-4"><%= data.Title %></h5>
+          <p><span class="fw-bold">Genre : </span><%= data.Genre %></p>
+          <p><span class="fw-bold">Rating : </span><%= data.imdbRating %></p>
+          <p class="card-text">
+            <span class="fw-bold">Plot : </span><%= data.Plot %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<%- include('partials/footer') %>

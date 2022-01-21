@@ -1,12 +1,25 @@
+<%- layout('layout/boilerplate') %>
 
-<%- include('partials/header') %>
-
-<h1>MovieSearcher</h1>
-<div class="formed">
-<form  action="/result" method="get">
-    <input type="text"  name='search'  placeholder="Type a Movie name">
-    <input type="submit" >
-</form>
+<div class="container py-5 mx-auto">
+  <div class="text-center">
+    <h1 class="display-4">MovieSearcher</h1>
+    <!-- <div class="formed"> -->
+      <form
+      class="mx-auto my-3"
+        action="/result"
+        method="get"
+        style="width: 50%"
+      >
+        <div class="form-group mb-2">
+          <input
+            type="text"
+            class="form-control"
+            name="search"
+            placeholder="Type a Movie name"
+          />
+        </div>
+        <button class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
 </div>
-
-<%- include('partials/footer') %>
